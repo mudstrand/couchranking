@@ -1,26 +1,15 @@
-import mariadb
-import sys
+import fastapi
+import uvicorn
+from api import home
 
-# Connect to MariaDB Platform
-try:
-    conn = mariadb.connect(
-        user="mudstrand",
-        password="123Fender51!",
-        host="192.168.50.7",
-        port=3307,
-        database="mudstrand"
+api = fastapi.FastAPI()
 
-    )
-except mariadb.Error as e:
-    print(f"Error connecting to MariaDB Platform: {e}")
-    sys.exit(1)
 
-# Get Cursor
-cur = conn.cursor()
+def configure():
+    api.include_router(home.router)
 
-cur.execute(
-    "SELECT host,password FROM mysql.user where user=?", ('mudstrand',))
 
-# Print Result-set
-for (host, password) in cur:
-    print(f"Host: {host}, Password: {password}")
+configure()
+
+if __name__ == '__main__':
+    uvicorn.run("main:api", reload=True)
