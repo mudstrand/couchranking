@@ -5,5 +5,5 @@ from sqlalchemy import text
 # Connect to MariaDB using SqlAlchemy
 engine = sqlalchemy.create_engine("mariadb+mariadbconnector://couchranking:123Fender51!@192.168.50.7:3307/couchranking")
 
-sql = text('DROP TABLE IF EXISTS users;')
+sql = text('DROP TABLE IF EXISTS employees;')
 result = engine.execute(sql)
