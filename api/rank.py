@@ -1,9 +1,9 @@
 from starlette.requests import Request
 
-from app.media.auth.auth_bearer import JWTBearer
+from auth.auth_bearer import JWTBearer
 from fastapi import Depends, APIRouter
 from sqlalchemy.orm import Session
-from app.media.database import SessionLocal
+from database import SessionLocal
 
 
 def get_db():
