@@ -20,12 +20,12 @@ async def user_login(request: Request):
 
 
 # this is a method to just test security
-# @router.get('/rank', dependencies=[Depends(JWTBearer())])
-# def get_rank(request: Request, db: Session = Depends(get_db)):
-#     my_dict = {}
-#     my_dict['message'] = 'Hello World'
-#     my_dict['status'] = '110'
-#     return my_dict
+@router.get('/rank', dependencies=[Depends(JWTBearer())])
+def get_rank(request: Request, db: Session = Depends(get_db)):
+    my_dict = {}
+    my_dict['message'] = 'Hello World'
+    my_dict['status'] = '110'
+    return my_dict
 
 @router.post('/', response_model=schemas.ShowUser)
 def create_user(request: schemas.User, db: Session = Depends(get_db)):
