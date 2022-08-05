@@ -1,8 +1,8 @@
 import fastapi
 from starlette.requests import Request
 
-from app.media.auth.auth_bearer import JWTBearer
-from app.media.auth.auth_handler import signJWT
+from auth.auth_bearer import JWTBearer
+from auth.auth_handler import signJWT
 from fastapi import Depends
 
 router = fastapi.APIRouter()

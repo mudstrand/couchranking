@@ -2,6 +2,7 @@ from sqlalchemy.orm import Session
 from media import models, schemas
 from fastapi import HTTPException, status
 
+
 def create(request: schemas.User, db: Session):
     new_user = models.User(
         name=request.name, email=request.email, password=Hash.bcrypt(request.password))

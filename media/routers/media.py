@@ -1,4 +1,3 @@
-from typing import List
 from fastapi import Depends, APIRouter, status, Response, HTTPException
 from .. import schemas, database, models
 from sqlalchemy.orm import Session
