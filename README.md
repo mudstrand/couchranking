@@ -9,4 +9,4 @@ use conda for the environment
 installing modules
 fastapi -> conda install -c conda-forge fastapi
 uvicorn -> conda install -c conda-forge uvicorn
-mariadb -> from the conda env (couchranking) run -- pip instal mariadb
+mariadb -> from the conda env (couchranking) run -- pip install mariadb

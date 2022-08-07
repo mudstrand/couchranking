@@ -8,7 +8,16 @@ class Media(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     title = Column(String(length=100))
-    year = Column(Integer)
+    year = Column(String(length=100))
+    rated = Column(String(length=100))
+    writer = Column(String(length=100))
+    director = Column(String(length=100))
+    genre = Column(String(length=100))
+    actors = Column(String(length=1000))
+    plot = Column(String(length=5000))
+    rating = Column(String(length=10))
+    votes = Column(String(length=10))
+    box_office = Column(String(length=30))
 
 class User(Base):
     __tablename__ = 'users'

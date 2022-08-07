@@ -1,0 +1,40 @@
+{
+  "Title": "Uncle Buck",
+  "Year": "1989",
+  "Rated": "PG",
+  "Released": "16 Aug 1989",
+  "Runtime": "100 min",
+  "Genre": "Comedy",
+  "Director": "John Hughes",
+  "Writer": "John Hughes",
+  "Actors": "John Candy, Macaulay Culkin, Jean Louisa Kelly",
+  "Plot": "Bachelor and all-round slob Buck babysits his brother's rebellious teenage daughter and her cute younger brother and sister.",
+  "Language": "English",
+  "Country": "United States",
+  "Awards": "N/A",
+  "Poster": "https://m.media-amazon.com/images/M/MV5BMjIwOWVkNzMtZTIyZC00ZWM0LTg5MWYtMWYwYjVhZTM3MDMzXkEyXkFqcGdeQXVyNTI4MjkwNjA@._V1_SX300.jpg",
+  "Ratings": [
+    {
+      "Source": "Internet Movie Database",
+      "Value": "7.0/10"
+    },
+    {
+      "Source": "Rotten Tomatoes",
+      "Value": "62%"
+    },
+    {
+      "Source": "Metacritic",
+      "Value": "51/100"
+    }
+  ],
+  "Metascore": "51",
+  "imdbRating": "7.0",
+  "imdbVotes": "95,086",
+  "imdbID": "tt0098554",
+  "Type": "movie",
+  "DVD": "26 Aug 2008",
+  "BoxOffice": "$66,758,538",
+  "Production": "N/A",
+  "Website": "N/A",
+  "Response": "True"
+}

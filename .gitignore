@@ -1,4 +1,4 @@
 .idea/
 __pycache__/
-venv/
-app/venv/
+!/omdb_api.py
+./omdb_api.py

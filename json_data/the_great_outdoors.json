@@ -1,0 +1,40 @@
+{
+  "Title": "The Great Outdoors",
+  "Year": "1988",
+  "Rated": "PG",
+  "Released": "17 Jun 1988",
+  "Runtime": "91 min",
+  "Genre": "Comedy",
+  "Director": "Howard Deutch",
+  "Writer": "John Hughes",
+  "Actors": "Dan Aykroyd, John Candy, Stephanie Faracy",
+  "Plot": "A Chicago man and his family go camping with his obnoxious brother-in-law.",
+  "Language": "English",
+  "Country": "United States",
+  "Awards": "N/A",
+  "Poster": "https://m.media-amazon.com/images/M/MV5BZDVkNDQ3MDItZTBlOS00ZGU0LTk0ZDUtYmE2YzNmOTM4YzBhXkEyXkFqcGdeQXVyMjU5OTg5NDc@._V1_SX300.jpg",
+  "Ratings": [
+    {
+      "Source": "Internet Movie Database",
+      "Value": "6.6/10"
+    },
+    {
+      "Source": "Rotten Tomatoes",
+      "Value": "41%"
+    },
+    {
+      "Source": "Metacritic",
+      "Value": "24/100"
+    }
+  ],
+  "Metascore": "24",
+  "imdbRating": "6.6",
+  "imdbVotes": "46,754",
+  "imdbID": "tt0095253",
+  "Type": "movie",
+  "DVD": "15 Dec 2005",
+  "BoxOffice": "$41,455,230",
+  "Production": "N/A",
+  "Website": "N/A",
+  "Response": "True"
+}

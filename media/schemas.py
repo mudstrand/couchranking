@@ -10,8 +10,16 @@ class User(BaseModel):
 
 class Media(BaseModel):
     title: str
-    year: int
-
+    year: str
+    rated = str
+    writer = str
+    director = str
+    genre = str
+    actors = str
+    plot = str
+    rating = str
+    votes = str
+    box_office = str
 
 class ShowUser(BaseModel):
     name:str

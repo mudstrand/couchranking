@@ -1,5 +1,8 @@
 import http.client
 
+DATA = "http://www.omdbapi.com/?apikey=[yourkey]&"
+POSTER = "http://img.omdbapi.com/?apikey=[yourkey]&"
+SAMPLE = "http://www.omdbapi.com/?i=tt3896198&apikey=3fc3dbe7"
 
 def main():
     print("hello")
