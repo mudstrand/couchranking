@@ -52,14 +52,19 @@ def load(name: str, db: Session = Depends(get_db)):
         title=data["Title"],
         year=data["Year"],
         rated=data["Rated"],
+        released=data["Released"],
+        runtime=data["Runtime"],
         writer=data["Writer"],
         director=data["Director"],
         genre=data["Genre"],
+        type=data["Type"],
         actors=data["Actors"],
         plot=data["Plot"],
         rating=data["imdbRating"],
         votes=data["imdbVotes"],
-        box_office=data.get("BoxOffice")
+        box_office=data.get("BoxOffice"),
+        poster=data.get("Poster"),
+        imdb_id=data.get("imdbID")
         )
     db.add(new_media)
     db.commit()

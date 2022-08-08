@@ -12,14 +12,19 @@ class Media(BaseModel):
     title: str
     year: str
     rated = str
+    released = str
+    runtime = str
     writer = str
     director = str
     genre = str
+    type = str
     actors = str
     plot = str
     rating = str
     votes = str
     box_office = str
+    poster = str
+    imdb_id = str
 
 class ShowUser(BaseModel):
     name:str
