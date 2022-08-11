@@ -1,0 +1,36 @@
+{
+  "Title": "The Resort",
+  "Year": "2021",
+  "Rated": "N/A",
+  "Released": "12 Jul 2021",
+  "Runtime": "76 min",
+  "Genre": "Horror",
+  "Director": "Taylor Chien",
+  "Writer": "Taylor Chien",
+  "Actors": "Bianca Haase, Brock O'Hurn, Michael Vlamis",
+  "Plot": "Four friends head to Hawaii to investigate reports of a haunting at an abandoned resort in hopes of finding the infamous Half-Faced Girl. When they arrive, they soon learn you should be careful what you wish for.",
+  "Language": "English",
+  "Country": "United States",
+  "Awards": "N/A",
+  "Poster": "https://m.media-amazon.com/images/M/MV5BZWUzNDRmZDQtMmQ3Yi00YmJiLWFmMGEtNGZjMmFiZjIxYWM1XkEyXkFqcGdeQXVyMTEyNDk3MjY3._V1_SX300.jpg",
+  "Ratings": [
+    {
+      "Source": "Internet Movie Database",
+      "Value": "3.1/10"
+    },
+    {
+      "Source": "Rotten Tomatoes",
+      "Value": "38%"
+    }
+  ],
+  "Metascore": "N/A",
+  "imdbRating": "3.1",
+  "imdbVotes": "2,634",
+  "imdbID": "tt12163074",
+  "Type": "movie",
+  "DVD": "30 Apr 2021",
+  "BoxOffice": "$191,996",
+  "Production": "N/A",
+  "Website": "N/A",
+  "Response": "True"
+}

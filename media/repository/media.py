@@ -1,4 +1,6 @@
 from sqlalchemy.orm import Session
+
+from util.sources import Sources
 from .. import models, schemas
 from fastapi import HTTPException, status
 
@@ -39,6 +41,20 @@ def update(id: int, request: schemas.Media, db: Session):
     db.commit()
     return 'updated'
 
+
+def update_source(id: int, source: int, db: Session):
+    media_item = db.query(models.Media).filter(models.Media.id == id)
+
+    if not media_item:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND,
+                            detail=f"Media item with id {id} not found")
+
+    # media_item.streaming_source =
+    # update({'no_of_logins': User.no_of_logins + 1})
+    source = Sources(int (source)).name
+    media_item.update({'streaming_source': source})
+    db.commit()
+    return 'updated'
 
 def show(id: int, db: Session):
     media_item = db.query(models.Media).filter(models.Media.id == id).first()

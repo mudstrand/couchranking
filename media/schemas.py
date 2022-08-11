@@ -25,6 +25,7 @@ class Media(BaseModel):
     box_office = str
     poster = str
     imdb_id = str
+    streaming_source = str
 
 class ShowUser(BaseModel):
     name:str

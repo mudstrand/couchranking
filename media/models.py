@@ -7,7 +7,7 @@ class Media(Base):
     __tablename__ = "media_items"
 
     id = Column(Integer, primary_key=True, index=True)
-    title = Column(String(length=100))
+    title = Column(String(length=100), index=True, unique=True)
     year = Column(String(length=100))
     rated = Column(String(length=100))
     released = Column(String(length=100))
@@ -23,6 +23,7 @@ class Media(Base):
     box_office = Column(String(length=30))
     poster = Column(String(length=1000))
     imdb_id = Column(String(length=20))
+    streaming_source = Column(String(length=200))
 
 
 class User(Base):

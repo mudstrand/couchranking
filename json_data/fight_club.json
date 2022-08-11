@@ -1,0 +1,40 @@
+{
+  "Title": "Fight Club",
+  "Year": "1999",
+  "Rated": "R",
+  "Released": "15 Oct 1999",
+  "Runtime": "139 min",
+  "Genre": "Drama",
+  "Director": "David Fincher",
+  "Writer": "Chuck Palahniuk, Jim Uhls",
+  "Actors": "Brad Pitt, Edward Norton, Meat Loaf",
+  "Plot": "An insomniac office worker and a devil-may-care soap maker form an underground fight club that evolves into much more.",
+  "Language": "English",
+  "Country": "Germany, United States",
+  "Awards": "Nominated for 1 Oscar. 11 wins & 38 nominations total",
+  "Poster": "https://m.media-amazon.com/images/M/MV5BNDIzNDU0YzEtYzE5Ni00ZjlkLTk5ZjgtNjM3NWE4YzA3Nzk3XkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_SX300.jpg",
+  "Ratings": [
+    {
+      "Source": "Internet Movie Database",
+      "Value": "8.8/10"
+    },
+    {
+      "Source": "Rotten Tomatoes",
+      "Value": "79%"
+    },
+    {
+      "Source": "Metacritic",
+      "Value": "66/100"
+    }
+  ],
+  "Metascore": "66",
+  "imdbRating": "8.8",
+  "imdbVotes": "2,057,512",
+  "imdbID": "tt0137523",
+  "Type": "movie",
+  "DVD": "14 Oct 2003",
+  "BoxOffice": "$37,030,102",
+  "Production": "N/A",
+  "Website": "N/A",
+  "Response": "True"
+}
