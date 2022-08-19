@@ -1,13 +1,15 @@
 import glob
-import json
+import time
 from pathlib import Path
-from util.sources import Sources
+# from util.sources import Sources
 
 import requests
 
+from media.util.sources import Sources
+
 LOCATION = rf'D:\Code\github\couchranking\json_data\*.json'
-BASE_URL = 'http://localhost:8000/media'
-BASE_LOAD_URL = 'http://localhost:8000/media/load'
+BASE_URL = 'http://127.0.0.1:8000/media'
+BASE_LOAD_URL = 'http://127.0.0.1:8000/media/load'
 BASE_SOURCE_ADD_URL = BASE_URL + '/source'
 
 source_list = {'Breaking Bad': Sources.Netflix,
@@ -26,7 +28,11 @@ for full_filename in filelist:
     print(f'base: {base}')
     url = BASE_LOAD_URL + "/" + base
     print(f'url: {url}')
+    start = time.time()
     requests.get(url)
+    end = time.time()
+    elapsed = end - start
+    print(f'url took {elapsed}   {end} {start}')
 
 headers = {'content-type': 'application/json'}
 

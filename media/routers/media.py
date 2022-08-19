@@ -1,10 +1,12 @@
-import json
+# import json
+import time
 
 from fastapi import Depends, APIRouter, status, Response, HTTPException
 from .. import schemas, database, models
 from sqlalchemy.orm import Session
-from ..repository import media
+# from ..repository import media
 from ..movie_api.omdb_api import get_movie_details
+from ..repository import media
 
 router = APIRouter(
     # prefix="/media",
@@ -43,6 +45,7 @@ get_db = database.get_db
 
 @router.get('/media/load/{name}', status_code=status.HTTP_201_CREATED)
 def load(name: str, db: Session = Depends(get_db)):
+    start = time.time()
     try:
         data = get_movie_details(name)
     except FileNotFoundError as e:
@@ -65,22 +68,24 @@ def load(name: str, db: Session = Depends(get_db)):
         box_office=data.get("BoxOffice"),
         poster=data.get("Poster"),
         imdb_id=data.get("imdbID")
-        )
+    )
     db.add(new_media)
     db.commit()
     db.refresh(new_media)
+    end = time.time()
+    elapsed = end - start
+    print(f'timer took {elapsed}')
     return new_media
 
 
 @router.get('/media')
 def all(db: Session = Depends(get_db)):
-    data = get_movie_details('the_anchorman')
     media_items = db.query(models.Media).all()
     return media_items
 
 
 @router.get('/media/{id}', status_code=status.HTTP_200_OK)
-def show(id:int, response: Response, db: Session = Depends(get_db)):
+def show(id: int, response: Response, db: Session = Depends(get_db)):
     media_item = db.query(models.Media).filter(models.Media.id == id).first()
     if not media_item:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Media item with id {id} is not available")
@@ -89,7 +94,7 @@ def show(id:int, response: Response, db: Session = Depends(get_db)):
 
 @router.delete('/media/{id}', status_code=status.HTTP_204_NO_CONTENT)
 def destroy(id: int, db: Session = Depends(get_db)):
-    db.query(models.Media).filter(models.Media.id == id).delete(synchronize_session=False)
+    db.query(models.Media).filter(models.Media.id == id).delete(synchronize_session='False')
     db.commit()
     return {'message': 'done'}
 
@@ -100,6 +105,7 @@ def update(id: int, request: schemas.Media, db: Session = Depends(get_db)):
     # db.query(models.Media).filter(models.Media.id == id).update(request)
     # db.commit()
     # return {'message': 'updated successfully'}
+
 
 @router.put('/media/source/{id}/{source}', status_code=status.HTTP_202_ACCEPTED)
 def update(id: int, source: int, db: Session = Depends(get_db)):
