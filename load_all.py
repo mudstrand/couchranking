@@ -19,7 +19,8 @@ source_list = {'Breaking Bad': Sources.Netflix,
                'The Nice Guys': Sources.Netflix,
                'Bullet Train': Sources.Theater,
                'The Orville': Sources.Hulu,
-               'The Orville: New Horizons': Sources.Hulu }
+               'The Orville: New Horizons': Sources.Hulu,
+               'House of the Dragon': Sources.HBO }
 
 filelist = glob.glob(LOCATION)
 

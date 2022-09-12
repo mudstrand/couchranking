@@ -27,7 +27,7 @@ function Media() {
       // let refid = "http://localhost:8000/media/" + current_media.id
 
       children.push(<td>
-        <Link to="/mediadetails" state={current_media}>
+        <Link to="/media-details" state={current_media}>
           <img alt={current_media.title} src={current_media.poster}
             width="200" height="300" />
         </Link>

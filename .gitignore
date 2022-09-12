@@ -1,5 +1,5 @@
 movie_api.py 
 .idea/
 __pycache__/
-omdb_api.py
+omdb_api_exp.py
 omdb_key.txt
