@@ -9,5 +9,8 @@ use conda for the environment
 installing modules
 fastapi -> conda install -c conda-forge fastapi
 uvicorn -> conda install -c conda-forge uvicorn
+psycopg -> conda install psycopg2
+pygresql -> conda install pygresql
 
 mariadb -> from the conda env (couchranking) run -- pip install mariadb
+psycopg-binary -> from the conda env (couchranking) run -- pip install psycopg2

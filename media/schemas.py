@@ -3,9 +3,28 @@ from pydantic import BaseModel
 
 
 class User(BaseModel):
-    name:str
-    email:str
-    password:str
+    email: Optional[str] = None
+    username: Optional[str] = None
+    password: Optional[str] = None
+    firstname: Optional[str] = None
+    lastname: Optional[str] = None
+    verified: Optional[bool] = False
+    active: Optional[bool] = False
+
+
+class UserRegister(BaseModel):
+    email: str
+    password: str
+
+
+class UserLogin(BaseModel):
+    email: str
+    password: str
+
+
+class UserLoginResponse(BaseModel):
+    access_token: str
+    roles: Optional[list]
 
 
 class Media(BaseModel):
@@ -27,10 +46,11 @@ class Media(BaseModel):
     imdb_id = str
     streaming_source = str
 
+
 class ShowUser(BaseModel):
-    name:str
-    email:str
-    media_items : List[Media] =[]
+    name: str
+    email: str
+    media_items: List[Media] = []
 
     class Config():
         orm_mode = True
@@ -39,4 +59,3 @@ class ShowUser(BaseModel):
 class Login(BaseModel):
     username: str
     password: str
-

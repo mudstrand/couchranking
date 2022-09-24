@@ -1,6 +1,8 @@
-from sqlalchemy import Column, Integer, String
-from database import Base
+from sqlalchemy import Column, Integer, String, Boolean
+# from database import Base
 from sqlalchemy.orm import relationship
+
+from media.database import Base
 
 
 class Media(Base):
@@ -30,6 +32,10 @@ class User(Base):
     __tablename__ = 'users'
 
     id = Column(Integer, primary_key=True, index=True)
-    name = Column(String(length=100))
-    email = Column(String(length=100))
+    email = Column(String(length=200))
+    username = Column(String(length=200))
     password = Column(String(length=100))
+    firstname = Column(String(length=100))
+    lastname = Column(String(length=100))
+    verified = Column(Boolean, default=False)
+    active = Column(Boolean, default=False)

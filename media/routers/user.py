@@ -4,7 +4,7 @@ from fastapi import APIRouter, Depends
 from media.repository import user
 from starlette.requests import Request
 
-from media.auth.auth_handler import signJWT
+from media.auth.auth_handler import sign_jwt
 from media.auth.auth_bearer import JWTBearer
 
 router = APIRouter(
@@ -14,10 +14,18 @@ router = APIRouter(
 
 get_db = database.get_db
 
-@router.get('/user/login')
-async def user_login(request: Request):
-    return(signJWT('mark@udstrand.com'))
+@router.post('/login', response_model=schemas.UserLoginResponse)
+async def user_login(request: schemas.UserLogin):
+    email = request.email
+    password = request.password
+    token = sign_jwt(email)
+    roles = get_roles(email)
+    rv = schemas.UserLoginResponse(access_token = token, roles = roles)
+    return(rv)
 
+
+def get_roles(email):
+    return ['admin', 'ranked']
 
 # this is a method to just test security
 @router.get('/rank', dependencies=[Depends(JWTBearer())])
@@ -27,9 +35,11 @@ def get_rank(request: Request, db: Session = Depends(get_db)):
     my_dict['status'] = '110'
     return my_dict
 
-@router.post('/', response_model=schemas.ShowUser)
-def create_user(request: schemas.User, db: Session = Depends(get_db)):
+@router.post('/register', response_model=schemas.User)
+def create_user(request: schemas.UserRegister, db: Session = Depends(get_db)):
+    print("got here")
     return user.create(request, db)
+
 
 
 @router.get('/{id}', response_model=schemas.ShowUser)
