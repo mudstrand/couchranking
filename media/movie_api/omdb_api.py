@@ -1,40 +1,50 @@
 import json
-import sys
+import requests
 
+DATA = "http://www.omdbapi.com/?apikey=[yourkey]&"
+POSTER = "http://img.omdbapi.com/?apikey=[yourkey]&"
+SAMPLE = "http://www.omdbapi.com/?i=tt3896198&apikey=3fc3dbe7"
+SAMPLE_2 = "http://www.omdbapi.com/?t=Breaking&apikey=3fc3dbe7"
+SEARCH_URL_BASE = "http://www.omdbapi.com/?"
 
-def get_movie_details(title):
-    filename = rf'D:\Code\github\couchranking\json_data\{title}.json'
-    print(f"opening: {filename}")
-    with open(filename, encoding="utf-8") as f:
-        data = json.load(f)
-    # dump_data(data)
+def read_key():
+    filename = r'D:\Code\github\couchranking\omdb_key.txt'
+    with open(filename) as f:
+        data = f.readline()
 
     return data
 
+KEY = read_key()
+# page -> items to return
+# s -> search term
+# type -> movie, series, episode
 
-def dump_data(data):
-    print(f'{data.get("Title")}')
-    print(f'{data.get("Year")}')
-    print(f'{data.get("Rated")}')
-    print(f'{data.get("Released")}')
-    print(f'{data.get("Runtime")}')
-    print(f'{data.get("Genre")}')
-    print(f'{data.get("Director")}')
-    print(f'{data.get("Writer")}')
-    print(f'{data.get("Actors")}')
-    print(f'{data.get("Plot")}')
-    print(f'{data.get("Language")}')
-    print(f'{data.get("Country")}')
-    print(f'{data.get("Awards")}')
-    print(f'{data.get("Poster")}')
-    print(f'ratings: {data.get("Ratings")}')
-    # print(f'{data.get("Ratings").get(0).get("Source")}')
-    print(f'{data.get("Metascore")}')
-    print(f'{data.get("imdbRating")}')
-    print(f'{data.get("imdbVotes")}')
-    print(f'{data.get("imdbID")}')
-    print(f'{data.get("Type")}')
-    print(f'{data.get("DVD")}')
-    print(f'{data.get("BoxOffice")}')
-    print(f'{data.get("Production")}')
-    print(f'{data.get("Website")}')
+def omdb_search(title):
+    url = get_name_search_url(title, KEY)
+    r = requests.get(url)
+    print(json.dumps(r.json(), indent=2))
+    return r.json()
+
+
+def get_name_locate_url(name, key):
+    url = ("%st=%s&apikey=%s" % (SEARCH_URL_BASE, name, key))
+    return url
+
+
+def get_name_search_url(name, key):
+    url = ("%ss=%s&apikey=%s" % (SEARCH_URL_BASE, name, key))
+    return url
+
+
+def get_name_search_by_type_url(name, type, key):
+    url = ("%ss=%s&type=%s&apikey=%s" % (SEARCH_URL_BASE, name, type, key))
+    return url
+
+
+def get_id_search_url(id, key):
+    url = ("%si=%s&apikey=%s" % (SEARCH_URL_BASE, id, key))
+    return url
+
+
+
+

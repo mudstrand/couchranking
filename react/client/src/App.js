@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Media from './components/Media';
+import MediaAdd from './components/MediaAdd';
 import MediaDetails from './components/MediaDetails';
 import Register from './components/Register';
 import Login from './components/Login';
@@ -38,8 +39,6 @@ function App() {
     <Routes>
       <Route path="/" element={<Layout />}>
         {/* public routes */}
-        <Route path="media" element={<Media />} />
-        <Route path="mediadetails" element={<MediaDetails />} />
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
         <Route path="linkpage" element={<LinkPage />} />
@@ -47,6 +46,9 @@ function App() {
 
         {/* these routes are protected */}
         <Route element={<RequireAuth />}>
+          <Route path="media-add" element={<MediaAdd />} />          
+          <Route path="media-details" element={<MediaDetails />} />          
+          <Route path="media" element={<Media />} />
           <Route path="/" element={<Home />} />
           <Route path="editor" element={<Editor />} />
           <Route path="admin" element={<Admin />} />

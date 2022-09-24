@@ -19,6 +19,8 @@ const Home = () => {
             <br />
             <p>You are logged in!</p>
             <br />
+            <Link to="/add_media">Add Media</Link>
+            <br />
             <Link to="/media">Go to the Media page</Link>
             <br />
             <Link to="/editor">Go to the Editor page</Link>

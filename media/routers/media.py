@@ -5,8 +5,9 @@ from fastapi import Depends, APIRouter, status, Response, HTTPException
 from .. import schemas, database, models
 from sqlalchemy.orm import Session
 # from ..repository import media
-from ..movie_api.omdb_api import get_movie_details
+from ..movie_api.local_file_api import get_movie_details
 from ..repository import media
+from ..movie_api.omdb_api import omdb_search
 
 router = APIRouter(
     # prefix="/media",
@@ -42,8 +43,11 @@ get_db = database.get_db
 #     db.refresh(new_media)
 #     return new_media
 
+@router.get('/media/search/{name}', status_code=status.HTTP_200_OK)
+def search(name: str, db: Session = Depends(get_db)):
+    return omdb_search(name)
 
-@router.get('/media/load/{name}', status_code=status.HTTP_201_CREATED)
+@router.get('/media/load/{name}', status_code=status.HTTP_200_OK)
 def load(name: str, db: Session = Depends(get_db)):
     start = time.time()
     try:
